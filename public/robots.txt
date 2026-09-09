@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chatapodbelianskymitatrami.sk/sitemap.xml

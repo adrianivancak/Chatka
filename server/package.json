@@ -1,0 +1,19 @@
+{
+  "name": "chata-pod-havranom-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Backend for the Chata pod Havranom cottage website: shared calendar data, secure admin login, and email delivery.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "hash-password": "node hash-password.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "bcryptjs": "^2.4.3",
+    "nodemailer": "^6.9.13",
+    "multer": "^2.0.0",
+    "dotenv": "^16.4.5"
+  }
+}

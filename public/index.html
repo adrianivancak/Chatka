@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chata pod Belianskymi Tatrami — ubytovanie v Ždiari</title>
+<meta name="description" content="Súkromná zrubová chata priamo v Ždiari s výhľadom na Belianske Tatry. Sauna, krb, terasa — rezervujte si termín online.">
+<link rel="canonical" href="https://chatapodbelianskymitatrami.sk/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Chata pod Belianskymi Tatrami">
+<meta property="og:title" content="Chata pod Belianskymi Tatrami — ubytovanie v Ždiari">
+<meta property="og:description" content="Súkromná zrubová chata priamo v Ždiari s výhľadom na Belianske Tatry. Sauna, krb, terasa — rezervujte si termín online.">
+<meta property="og:url" content="https://chatapodbelianskymitatrami.sk/">
+<meta name="twitter:card" content="summary_large_image">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Chata pod Belianskymi Tatrami",
+  "description": "Súkromná zrubová chata v Ždiari s výhľadom na Belianske Tatry.",
+  "address": { "@type": "PostalAddress", "addressLocality": "Ždiar", "addressRegion": "Prešovský kraj", "addressCountry": "SK" },
+  "priceRange": "€€"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="admin-mode-banner">Režim úprav je aktívny — pri jednotlivých sekciách vidíte ikonu ⚙ na rýchlu úpravu.</div>
+
+
+<header>
+  <div class="nav">
+    <div class="brand" onclick="navigate('home')">
+      <div class="brand-logo" id="brandLogo"></div>
+      <span>Chata pod Belianskymi Tatrami</span>
+    </div>
+    <nav class="links" id="navLinks">
+      <a data-page="home" onclick="navigate('home')">Domov</a>
+      <a data-page="pricing" onclick="navigate('pricing')">Cenník</a>
+      <a data-page="gallery" onclick="navigate('gallery')">Galéria</a>
+      <a data-page="faq" onclick="navigate('faq')">Otázky</a>
+      <a data-page="contact" onclick="navigate('contact')">Kontakt</a>
+      <button class="nav-cta" onclick="navigateToBooking()">Rezervovať</button>
+    </nav>
+    <button class="menu-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B2A24" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section class="hero-full" id="heroSection">
+    <button class="edit-gear section-gear" style="top:16px; right:auto; left:16px;" onclick="openAdmin(); showAdminTab('content')" title="Upraviť hero sekciu">⚙</button>
+    <div class="hero-bg-img" id="heroBg" style="display:none;"></div>
+    <svg class="hero-fallback-illustration" id="heroFallback" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 480 L160 220 L280 380 L420 160 L620 400 L780 200 L980 420 L1200 260 L1200 700 L0 700 Z" fill="#3C4A45"/>
+      <path d="M0 480 L160 220 L280 380 L420 160 L620 400 L780 200 L980 420 L1200 260" fill="none" stroke="#57665F" stroke-width="2" opacity="0.6"/>
+      <path d="M120 700 Q90 560 170 480 Q250 560 220 700 Z" fill="#1E2B24"/>
+      <path d="M280 700 Q240 520 360 440 Q480 520 440 700 Z" fill="#182019"/>
+      <path d="M560 700 Q510 560 650 470 Q790 560 740 700 Z" fill="#1E2B24"/>
+      <g transform="translate(430,470)">
+        <polygon points="140,0 280,130 0,130" fill="#2B211A"/>
+        <rect x="35" y="130" width="210" height="150" fill="#4A3626"/>
+        <rect x="105" y="195" width="42" height="85" fill="#100C08"/>
+        <rect x="168" y="165" width="38" height="38" fill="#D9A441" opacity="0.9"/>
+        <rect x="0" y="278" width="280" height="14" fill="#100C08"/>
+      </g>
+      <circle cx="990" cy="130" r="46" fill="#D9A441" opacity="0.75"/>
+    </svg>
+    <div class="hero-scrim"></div>
+
+    <div class="hero-season-toggle" id="heroSeasonToggle">
+      <button class="season-btn active" data-season="summer" onclick="setHeroSeason('summer')">Leto</button>
+      <button class="season-btn" data-season="winter" onclick="setHeroSeason('winter')">Zima</button>
+    </div>
+
+    <div class="hero-content wrap">
+      <div class="hero-location">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2 4 18h16z"/></svg>
+        <span id="heroLocationText">ŽDIAR · BELIANSKE TATRY</span>
+      </div>
+      <h1 id="heroTitle">Chata pod Belianskymi Tatrami</h1>
+      <p class="lede" id="heroTagline"></p>
+      <div class="hero-stats" id="heroFactsGrid"></div>
+      <div class="hero-actions">
+        <button class="btn-primary" onclick="navigateToBooking()">Pozrieť voľné termíny</button>
+        <button class="btn-ghost-light" onclick="navigate('gallery')">Pozrieť chatu</button>
+      </div>
+      <div class="trust-badge" id="trustBadge" style="display:none;">
+        <span class="stars">★★★★★</span> <b id="trustBadgeScore"></b> <span id="trustBadgeCount"></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap" id="quickCheckWrap">
+    <div class="quick-check-card">
+      <div class="qc-fields">
+        <div class="qc-field"><label>Príchod</label><input type="date" id="qcStart"></div>
+        <div class="qc-field"><label>Odchod</label><input type="date" id="qcEnd"></div>
+        <div class="qc-field"><label>Hostia</label><select id="qcGuests"></select></div>
+        <button class="btn-primary qc-submit" onclick="quickCheckAvailability()">Skontrolovať dostupnosť</button>
+      </div>
+      <p class="qc-helper" id="heroHelperTextEl"></p>
+      <div id="qcMsg"></div>
+    </div>
+  </div>
+
+  <div class="folk-divider" aria-hidden="true"></div>
+
+  <div class="wrap" id="specialOffersWrap"></div>
+
+  <section class="highlights section-anchor" id="highlightsSection">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('highlights')" title="Upraviť">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Prečo práve táto chata</span>
+        <h2>Súkromie priamo v srdci Ždiaru</h2>
+      </div>
+      <div class="highlight-grid" id="highlightsGrid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="aboutSection" class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('content')" title="Upraviť">⚙</button>
+    <div class="wrap about-grid">
+      <div>
+        <span class="kicker">O chate a Ždiari</span>
+        <h2 id="aboutHeading">Goralská obec pod najvyššími štítmi</h2>
+        <p id="aboutText" style="margin-top:16px; color:var(--spruce-2);"></p>
+        <ul class="amenities" id="amenitiesList"></ul>
+        <a class="edit-gear footer-add-page" onclick="openAdmin(); showAdminTab('amenities')">+ Upraviť vybavenie</a>
+      </div>
+      <div class="about-panel">
+        <h3>Ako to tu funguje</h3>
+        <p>Check-in od 15:00, check-out do 10:00. Kľúč v mechanickej schránke — kód pošleme deň pred príchodom.</p>
+        <div class="stat-row"><span>Cena od</span><b id="aboutPrice">120 €/noc</b></div>
+        <div class="stat-row"><span>Minimálny pobyt</span><span>2 noci</span></div>
+        <div class="stat-row"><span>Kapacita</span><span id="aboutCapacity">4 osoby</span></div>
+        <p class="capacity-note" id="capacityNote"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lastminute-teaser section-anchor" id="lastMinuteSection">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('deals')" title="Upraviť">⚙</button>
+    <div class="wrap">
+      <div class="section-head" style="max-width:640px;">
+        <span class="kicker" style="color:var(--amber);">Voľné termíny</span>
+        <h2 style="color:var(--cream);">Last minute pobyty</h2>
+        <p style="color:var(--limestone-2);">Neobsadené termíny so zľavou. Presný kalendár nájdete na stránke Kalendár.</p>
+      </div>
+      <div class="deal-cards" id="dealCards"></div>
+      <button class="btn-primary" style="margin-top:26px;" onclick="navigateToBooking()">Prejsť na kalendár</button>
+    </div>
+  </section>
+
+  <section id="reviewsTeaserSection" style="display:none;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Recenzie</span>
+        <h2>Čo hovoria naši hostia</h2>
+      </div>
+      <div class="reviews-grid" id="reviewsTeaser"></div>
+      <button class="btn-ghost" style="margin-top:26px;" onclick="navigate('reviews')">Zobraziť všetky recenzie</button>
+    </div>
+  </section>
+</div>
+
+<!-- CALENDAR -->
+<!-- PRICING + CALENDAR (merged: guests see price context, then pick dates) -->
+<div class="page" id="page-pricing">
+  <section class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('cennik')" title="Upraviť cenník">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Cenník a termíny</span>
+        <h2>Koľko to stojí a kedy je voľno</h2>
+        <p>Nižšie je orientačný prehľad sezónnych cien. Presný dostupný termín a konečnú cenu si vyberte priamo v kalendári pod tabuľkou.</p>
+      </div>
+      <div class="pricing-table-wrap">
+        <div class="pricing-table" id="pricingTable"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section id="calendarSection" class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('pricing')" title="Upraviť ceny, dĺžku pobytu a kódy">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Kalendár</span>
+        <h2>Vyberte si termín</h2>
+        <p>Kliknite na deň príchodu a potom na deň odchodu. Farebný trojuholník v rohu dňa znamená zľavnenú cenu.</p>
+      </div>
+      <div class="cal-shell">
+        <div>
+          <div class="cal-card">
+            <div class="cal-head">
+              <button class="cal-nav-btn" onclick="shiftMonth(-1)">&larr;</button>
+              <h3 id="calMonthLabel">—</h3>
+              <button class="cal-nav-btn" onclick="shiftMonth(1)">&rarr;</button>
+            </div>
+            <div class="cal-weekdays"><span>Po</span><span>Ut</span><span>St</span><span>Št</span><span>Pi</span><span>So</span><span>Ne</span></div>
+            <div class="cal-grid" id="calGrid"></div>
+            <div class="legend">
+              <span><i style="background:var(--free-bg); border:1px solid var(--line);"></i> Voľné</span>
+              <span><i style="background:var(--amber);"></i> Váš výber</span>
+              <span><i style="background:var(--pending);"></i> Žiadosť odoslaná</span>
+              <span><i style="background:var(--confirmed);"></i> Obsadené</span>
+              <span><i style="background:var(--blocked);"></i> Nedostupné</span>
+              <span><i class="legend-triangle"></i> Zľavnená cena</span>
+            </div>
+          </div>
+          <div class="selection-bar empty" id="selectionBar">Zatiaľ ste nevybrali žiadny termín.</div>
+          <p class="capacity-note" id="stayLengthNote" style="margin-top:10px;"></p>
+        </div>
+
+        <div class="cal-card">
+          <h3 style="font-size:1.1rem; margin-bottom:16px;">Žiadosť o rezerváciu</h3>
+          <p class="capacity-note" id="bookingCapacityNote" style="margin-top:-8px;"></p>
+          <div class="summary-box">
+            <div class="summary-line"><span>Termín</span><span id="sumDates">–</span></div>
+            <div class="summary-line"><span>Počet nocí</span><span id="sumNights">–</span></div>
+            <div class="summary-line" id="sumDiscountLine" style="display:none;"><span>Zľava</span><span id="sumDiscount">–</span></div>
+            <div class="summary-line total"><span>Spolu</span><span id="sumTotal">–</span></div>
+          </div>
+          <div class="summary-note" id="sumNote"></div>
+          <div class="field"><label>Meno a priezvisko</label><input id="bkName" type="text" placeholder="Jana Nováková"></div>
+          <div class="field"><label>E-mail</label><input id="bkEmail" type="email" placeholder="jana@example.com"></div>
+          <div class="field">
+            <label>Počet hostí</label>
+            <div class="guest-pickers">
+              <div class="guest-picker">
+                <span class="guest-picker-label">Dospelí</span>
+                <div class="stepper">
+                  <button type="button" id="adultsMinus" onclick="changeAdults(-1)">−</button>
+                  <span id="adultsCount">2</span>
+                  <button type="button" id="adultsPlus" onclick="changeAdults(1)">+</button>
+                </div>
+              </div>
+              <div class="guest-picker">
+                <span class="guest-picker-label">Deti (do 18 r.)</span>
+                <div class="stepper">
+                  <button type="button" id="kidsMinus" onclick="changeKids(-1)">−</button>
+                  <span id="kidsCount">0</span>
+                  <button type="button" id="kidsPlus" onclick="changeKids(1)">+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="field"><label>Telefón (nepovinné)</label><input id="bkPhone" type="tel" placeholder="+421..."></div>
+          <div class="field">
+            <label>Zľavový kód (nepovinné)</label>
+            <div class="voucher-row">
+              <input id="bkVoucher" type="text" placeholder="napr. LETO15">
+              <button type="button" class="small-btn" onclick="applyVoucher()">Overiť</button>
+            </div>
+            <div id="voucherMsg"></div>
+          </div>
+          <div class="field"><label>Odkaz</label><textarea id="bkMsg" placeholder="Napríklad: prídeme neskoro večer..."></textarea></div>
+          <button class="btn-primary" style="width:100%;" id="bkSubmitBtn" onclick="submitBooking()" disabled>Najprv vyberte termín v kalendári</button>
+          <div id="bookingMsg"></div>
+          <div class="privacy-note">Vaše meno, e-mail a odkaz pošleme priamo prevádzkovateľovi e-mailom a na webe sa neukladajú. Do kalendára sa zapíšu len dátumy a stav rezervácie.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- GALLERY -->
+<div class="page" id="page-gallery">
+  <section class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('gallery')" title="Upraviť galériu">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Galéria</span>
+        <h2>Chata cez ročné obdobia</h2>
+      </div>
+      <div class="gallery-filters" id="galleryFilters"></div>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- NEARBY -->
+<div class="page" id="page-nearby">
+  <section class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('nearby')" title="Upraviť okolie">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Okolie</span>
+        <h2>Čo je v okolí</h2>
+        <p>Chata leží priamo v Ždiari, na úpätí Belianskych Tatier.</p>
+      </div>
+      <div class="nearby-grid" id="nearbyGrid"></div>
+    </div>
+  </section>
+</div>
+
+<!-- FAQ -->
+<div class="page" id="page-faq">
+  <section class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('faq')" title="Upraviť otázky">⚙</button>
+    <div class="wrap" style="max-width:900px;">
+      <div class="section-head">
+        <h2>Než sa spýtate</h2>
+        <p>Ak nenájdete odpoveď, zavolajte alebo napíšte — ozveme sa rýchlo.</p>
+      </div>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+</div>
+
+<!-- REVIEWS -->
+<div class="page" id="page-reviews">
+  <section class="section-anchor">
+    <button class="edit-gear section-gear" onclick="openAdmin(); showAdminTab('reviews')" title="Upraviť recenzie">⚙</button>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Recenzie</span>
+        <h2>Čo hovoria naši hostia</h2>
+        <p>Recenziu môžu pridávať len hostia s potvrdenou rezerváciou — stačí zadať kód rezervácie z e-mailu.</p>
+      </div>
+      <div id="reviewsList" class="reviews-grid"></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <div class="wrap" style="max-width:560px;">
+      <div class="section-head">
+        <span class="kicker">Napísať recenziu</span>
+        <h2>Boli ste u nás ubytovaní?</h2>
+        <p>Zadajte kód rezervácie, ktorý ste dostali e-mailom (napr. REZ-1234) — funguje len pre potvrdené pobyty.</p>
+      </div>
+      <div id="reviewFormWrap">
+        <div class="field"><label>Kód rezervácie</label><input id="rvRef" type="text" placeholder="REZ-1234"></div>
+        <div class="field"><label>Vaše meno</label><input id="rvName" type="text"></div>
+        <div class="field">
+          <label>Hodnotenie</label>
+          <div class="star-picker" id="starPicker">
+            <span data-star="1">★</span><span data-star="2">★</span><span data-star="3">★</span><span data-star="4">★</span><span data-star="5">★</span>
+          </div>
+        </div>
+        <div class="field"><label>Vaša recenzia</label><textarea id="rvComment" style="min-height:110px;"></textarea></div>
+        <button class="btn-primary" onclick="submitReview()">Odoslať recenziu</button>
+        <div id="reviewFormMsg"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT -->
+<div class="page" id="page-contact">
+  <section>
+    <div class="wrap contact-grid">
+      <div>
+        <span class="kicker">Kontakt</span>
+        <h2>Máte otázku pred rezerváciou?</h2>
+        <ul class="info-list">
+          <li><b>Adresa</b><span id="contactAddress">Ždiar, Belianske Tatry, Slovensko</span></li>
+          <li><b>Telefón</b><span id="contactPhone">+421 900 000 000</span></li>
+          <li><b>E-mail</b>info@chatapodbelianskymitatrami.sk</li>
+        </ul>
+        <div class="map-frame">
+          <iframe id="contactMap" src="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa — poloha chaty"></iframe>
+        </div>
+      </div>
+      <div>
+        <div class="field"><label>Meno</label><input id="ctName" type="text"></div>
+        <div class="field"><label>E-mail</label><input id="ctEmail" type="email"></div>
+        <div class="field"><label>Správa</label><textarea id="ctMsg"></textarea></div>
+        <button class="btn-primary" onclick="submitContact()">Odoslať správu</button>
+        <div id="contactMsg"></div>
+        <div class="privacy-note">Táto správa sa posiela e-mailom priamo prevádzkovateľovi a na webe sa neukladá.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CUSTOM PAGES (any number, admin-created — see the footer's page list) -->
+<div class="page" id="page-custom">
+  <section><div class="wrap" style="max-width:800px;">
+    <div class="section-head"><h2 id="customPageTitle"></h2></div>
+    <p class="legal-content" id="customPageContent"></p>
+  </div></section>
+</div>
+
+<footer>
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <h3>Chata pod Belianskymi Tatrami</h3>
+      <p id="footerTagline">Súkromný zrub v goralskej obci Ždiar, priamo pod hrebeňom Belianskych Tatier.</p>
+      <div class="rating-badge" id="ratingBadge" style="display:none;">
+        <span class="rating-badge-score" id="ratingBadgeScore"></span>
+        <span id="ratingBadgeText"></span>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">Web</div>
+      <a data-page="home" onclick="navigate('home')">Domov</a>
+      <a data-page="pricing" onclick="navigate('pricing')">Cenník</a>
+      <a data-page="gallery" onclick="navigate('gallery')">Galéria</a>
+      <a data-page="nearby" onclick="navigate('nearby')">Okolie</a>
+      <a data-page="faq" onclick="navigate('faq')">Otázky</a>
+      <a data-page="reviews" onclick="navigate('reviews')">Recenzie</a>
+      <a data-page="contact" onclick="navigate('contact')">Kontakt</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">Kontakt</div>
+      <span id="footerPhone"></span>
+      <span id="footerEmail"></span>
+      <span id="footerAddress"></span>
+      <a id="footerFacebook" href="#" target="_blank" rel="noopener" style="display:none;">Facebook</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-label">Stránky</div>
+      <div id="footerCustomPages"></div>
+      <a class="edit-gear footer-add-page" onclick="openAdmin(); showAdminTab('pages')">+ Nová stránka</a>
+    </div>
+  </div>
+  <div class="wrap footer-row">
+    <span>© 2026 Chata pod Belianskymi Tatrami, Ždiar</span>
+    <a class="admin-link" onclick="openAdmin()">Správa webu</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+  <div style="text-align:center;"><img id="lightboxImg" src="" alt=""><div class="lightbox-cap" id="lightboxCap"></div></div>
+</div>
+
+<!-- ADMIN -->
+<button class="global-admin-fab" onclick="openAdmin(); showAdminTab('requests')" title="Otvoriť správu webu">⚙</button>
+
+<div class="admin-overlay" id="adminOverlay">
+  <div class="admin-box">
+    <button class="admin-close" onclick="closeAdmin()">&times;</button>
+    <div id="adminLoginView">
+      <div class="admin-login-icon">🔑</div>
+      <h2>Prihlásenie správcu</h2>
+      <div class="disclaimer">Heslo overuje server, nie táto stránka — v kóde webu sa nikde neobjavuje. Osobné údaje hostí sa natrvalo neukladajú.</div>
+      <div class="login-box">
+        <input id="adminPass" type="password" placeholder="Heslo správcu">
+        <button class="btn-primary" onclick="tryAdminLogin()">Vstúpiť</button>
+        <div id="adminLoginMsg" style="color:#a3392b; font-size:0.85rem; margin-top:8px;"></div>
+      </div>
+    </div>
+    <div id="adminMainView" style="display:none;">
+      <h2>Správa webu <button class="small-btn" style="float:right; font-weight:400;" onclick="adminLogout()">Odhlásiť sa</button></h2>
+      <p style="color:var(--sage); font-size:0.9rem;">Zmeny sa ukladajú priamo do tohto webu a vidia ich všetci návštevníci.</p>
+      <div class="admin-tab-groups">
+        <div class="admin-tab-group">
+          <div class="admin-tab-group-label">Rezervácie</div>
+          <div class="admin-tabs">
+            <button class="atab active" data-tab="requests" onclick="showAdminTab('requests')">📋 Žiadosti</button>
+            <button class="atab" data-tab="blocking" onclick="showAdminTab('blocking')">🚫 Blokovanie</button>
+            <button class="atab" data-tab="pricing" onclick="showAdminTab('pricing')">💶 Ceny</button>
+            <button class="atab" data-tab="staylength" onclick="showAdminTab('staylength')">🌙 Dĺžka pobytu</button>
+            <button class="atab" data-tab="cennik" onclick="showAdminTab('cennik')">🧾 Cenník (verejný)</button>
+            <button class="atab" data-tab="vouchers" onclick="showAdminTab('vouchers')">🎟️ Zľavové kódy</button>
+            <button class="atab" data-tab="deals" onclick="showAdminTab('deals')">🏷️ Last minute</button>
+            <button class="atab" data-tab="special" onclick="showAdminTab('special')">🎉 Špeciálne ponuky</button>
+          </div>
+        </div>
+        <div class="admin-tab-group">
+          <div class="admin-tab-group-label">Obsah a dizajn</div>
+          <div class="admin-tabs">
+            <button class="atab" data-tab="content" onclick="showAdminTab('content')">✏️ Obsah</button>
+            <button class="atab" data-tab="facts" onclick="showAdminTab('facts')">📊 Fakty</button>
+            <button class="atab" data-tab="highlights" onclick="showAdminTab('highlights')">🖼️ Dôvody</button>
+            <button class="atab" data-tab="amenities" onclick="showAdminTab('amenities')">🛋️ Vybavenie</button>
+            <button class="atab" data-tab="gallery" onclick="showAdminTab('gallery')">🖼️ Galéria</button>
+            <button class="atab" data-tab="nearby" onclick="showAdminTab('nearby')">📍 Okolie</button>
+            <button class="atab" data-tab="faq" onclick="showAdminTab('faq')">❓ Otázky</button>
+            <button class="atab" data-tab="pages" onclick="showAdminTab('pages')">📄 Stránky</button>
+          </div>
+        </div>
+        <div class="admin-tab-group">
+          <div class="admin-tab-group-label">Spätná väzba</div>
+          <div class="admin-tabs">
+            <button class="atab" data-tab="reviews" onclick="showAdminTab('reviews')">⭐ Recenzie</button>
+          </div>
+        </div>
+        <div class="admin-tab-group">
+          <div class="admin-tab-group-label">Zobrazenie webu</div>
+          <div class="admin-tabs">
+            <button class="atab" data-tab="visibility" onclick="showAdminTab('visibility')">👁️ Sekcie</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-panel-view active" id="tab-requests">
+        <div class="disclaimer">Detaily hosťa nájdete vo svojej e-mailovej schránke pod kódom rezervácie. Ten istý e-mail obsahuje aj odkaz na recenziu — pošlite ho hosťovi ručne po jeho odchode.</div>
+        <div id="requestsAdminList"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-blocking">
+        <p class="tab-intro">Ručne zablokujte termín bez toho, aby vznikla rezervácia.</p>
+        <div class="field-row">
+          <div class="field"><label>Od</label><input id="adm_blockStart" type="date"></div>
+          <div class="field"><label>Do</label><input id="adm_blockEnd" type="date"></div>
+        </div>
+        <div class="field"><label>Poznámka</label><input id="adm_blockNote" placeholder="Vlastný pobyt"></div>
+        <button class="small-btn" onclick="addManualBlock()">Zablokovať termín</button>
+        <div id="blocksAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-pricing">
+        <p class="tab-intro">Nastavte inú cenu za noc pre konkrétny rozsah dátumov.</p>
+        <div class="field-row">
+          <div class="field"><label>Od</label><input id="adm_priceStart" type="date"></div>
+          <div class="field"><label>Do</label><input id="adm_priceEnd" type="date"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Cena za noc (€)</label><input id="adm_priceValue" type="number" placeholder="180"></div>
+          <div class="field"><label>Popis (interný)</label><input id="adm_priceLabel" placeholder="Vianočné sviatky"></div>
+        </div>
+        <button class="small-btn" onclick="addPriceRule()">Pridať cenové pravidlo</button>
+        <div id="pricingAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-staylength">
+        <p class="tab-intro">Predvolený pobyt (v záložke Obsah) platí, kým sa neprekryje s pravidlom nižšie — napríklad dlhší minimálny pobyt cez leto.</p>
+        <div class="field-row">
+          <div class="field"><label>Od</label><input id="adm_stayStart" type="date"></div>
+          <div class="field"><label>Do</label><input id="adm_stayEnd" type="date"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Minimálny pobyt (noci)</label><input id="adm_stayMin" type="number" min="1" placeholder="7"></div>
+          <div class="field"><label>Maximálny pobyt (noci, nepovinné)</label><input id="adm_stayMax" type="number" min="1" placeholder="bez obmedzenia"></div>
+        </div>
+        <div class="field"><label>Popis (interný)</label><input id="adm_stayLabel" placeholder="Letná sezóna"></div>
+        <button class="small-btn" onclick="addStayRule()">Pridať pravidlo dĺžky pobytu</button>
+        <div id="stayRulesAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-vouchers">
+        <p class="tab-intro">Hostia zadajú kód pred odoslaním žiadosti o rezerváciu. Zľava sa odpočíta z celkovej ceny.</p>
+        <div class="field-row">
+          <div class="field"><label>Kód</label><input id="adm_voucherCode" placeholder="napr. LETO15"></div>
+          <div class="field"><label>Typ zľavy</label>
+            <select id="adm_voucherType"><option value="percent">Percentá (%)</option><option value="amount">Pevná suma (€)</option></select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Hodnota</label><input id="adm_voucherValue" type="number" min="1" placeholder="15"></div>
+          <div class="field"><label>Max. počet použití (nepovinné)</label><input id="adm_voucherMaxUses" type="number" min="1" placeholder="bez obmedzenia"></div>
+        </div>
+        <div class="field"><label>Platnosť do (nepovinné)</label><input id="adm_voucherExpires" type="date"></div>
+        <button class="small-btn" onclick="addVoucher()">Vytvoriť kód</button>
+        <div id="vouchersAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-reviews">
+        <p class="tab-intro">Recenzie od hostí čakajú na schválenie nižšie. Recenziu z inej platformy (Tripadvisor, Booking.com, Google) môžete pridať ručne aj s vlastným dátumom — zverejní sa okamžite.</p>
+        <div class="field"><label>Meno hosťa</label><input id="adm_revName" type="text"></div>
+        <div class="field-row">
+          <div class="field"><label>Hodnotenie (1–5)</label><input id="adm_revRating" type="number" min="1" max="5" value="5"></div>
+          <div class="field"><label>Zdroj (nepovinné)</label><input id="adm_revSource" placeholder="napr. Tripadvisor"></div>
+        </div>
+        <div class="field"><label>Dátum (nepovinné, inak dnes)</label><input id="adm_revDate" type="date"></div>
+        <div class="field"><label>Text recenzie</label><textarea id="adm_revComment"></textarea></div>
+        <button class="small-btn" onclick="addManualReview()">Pridať recenziu</button>
+        <div id="reviewsAdminList" style="margin-top:20px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-content">
+        <p class="tab-intro">Logo v navigácii — kým nenahráte vlastné, zobrazuje sa neutrálna zástupná ikona.</p>
+        <div class="logo-manager">
+          <div class="logo-preview" id="adm_logoPreview"></div>
+          <div style="flex:1;">
+            <input id="adm_logoFile" type="file" accept="image/*" style="display:none;" onchange="handleLogoUpload(this.files)">
+            <button class="small-btn" onclick="document.getElementById('adm_logoFile').click()">Nahrať logo</button>
+            <button class="small-btn danger" onclick="removeLogo()">Odstrániť logo</button>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>alebo vložiť URL obrázka</label><input id="adm_logoUrl" placeholder="https://..."></div>
+          <div class="field" style="display:flex; align-items:flex-end;"><button class="small-btn" onclick="setLogoUrl()">Použiť URL</button></div>
+        </div>
+
+        <p class="tab-intro" style="margin-top:22px;">Fotka na pozadí hero sekcie — samostatne pre leto a zimu (prepínač "Leto/Zima" sa zobrazí len keď je nastavená aspoň jedna). Bez fotky sa zobrazí ilustrácia.</p>
+        <div class="field-row">
+          <div class="field">
+            <label>Letná fotka</label>
+            <div class="logo-manager">
+              <div class="logo-preview" id="adm_heroImgSummerPreview"></div>
+              <div style="flex:1;">
+                <input id="adm_heroImgSummerFile" type="file" accept="image/*" style="display:none;" onchange="handleHeroImageUpload('summer', this.files)">
+                <button class="small-btn" onclick="document.getElementById('adm_heroImgSummerFile').click()">Nahrať</button>
+                <button class="small-btn danger" onclick="removeHeroImage('summer')">Odstrániť</button>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label>Zimná fotka</label>
+            <div class="logo-manager">
+              <div class="logo-preview" id="adm_heroImgWinterPreview"></div>
+              <div style="flex:1;">
+                <input id="adm_heroImgWinterFile" type="file" accept="image/*" style="display:none;" onchange="handleHeroImageUpload('winter', this.files)">
+                <button class="small-btn" onclick="document.getElementById('adm_heroImgWinterFile').click()">Nahrať</button>
+                <button class="small-btn danger" onclick="removeHeroImage('winter')">Odstrániť</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:22px;"><label>Nadpis hero sekcie</label><input id="adm_heroTitle"></div>
+        <div class="field"><label>Podnadpis hero sekcie</label><textarea id="adm_heroTagline"></textarea></div>
+        <div class="field"><label>Text "O chate"</label><textarea id="adm_aboutText" style="min-height:120px;"></textarea></div>
+        <div class="field-row">
+          <div class="field"><label>Základná cena za noc (€)</label><input id="adm_basePrice" type="number"></div>
+          <div class="field"><label>Maximálny počet hostí</label><input id="adm_maxGuests" type="number" min="1" max="20"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Predvolený minimálny pobyt (noci)</label><input id="adm_minNights" type="number" min="1"></div>
+          <div class="field"><label>Predvolený maximálny pobyt (noci, nepovinné)</label><input id="adm_maxNights" type="number" min="1" placeholder="bez obmedzenia"></div>
+        </div>
+        <div class="field"><label>Rezervácie možné najviac vopred (dní)</label><input id="adm_bookingHorizon" type="number" min="1" placeholder="365"></div>
+        <div class="field"><label>Poznámka o kapacite</label><input id="adm_capacityNote" placeholder="napr. 2 dospelí a 2 deti, alebo 3 dospelí"></div>
+        <div class="field-row">
+          <div class="field"><label>Adresa (pre kontakt a mapu)</label><input id="adm_address" placeholder="Ždiar, Belianske Tatry, Slovensko"></div>
+          <div class="field"><label>Telefón</label><input id="adm_phone" placeholder="+421 900 000 000"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>E-mail (verejný, pre kontakt a pätu stránky)</label><input id="adm_email" placeholder="info@..."></div>
+          <div class="field"><label>Facebook (URL, nepovinné)</label><input id="adm_facebookUrl" placeholder="https://facebook.com/..."></div>
+        </div>
+        <div class="field"><label>Text pod rýchlym vyhľadávaním v hero sekcii</label><textarea id="adm_heroHelperText"></textarea></div>
+
+        <p class="tab-intro" style="margin-top:22px;">Odznak externého hodnotenia v päte stránky (napr. "10 Booking.com 2024") — skrytý, kým ho nezapnete.</p>
+        <div class="field toggle-field">
+          <label><input type="checkbox" id="adm_ratingBadgeEnabled"> Zobraziť odznak</label>
+        </div>
+        <div class="field-row" style="grid-template-columns:1fr 1fr 1fr;">
+          <div class="field"><label>Skóre</label><input id="adm_ratingBadgeScore" placeholder="napr. 10"></div>
+          <div class="field"><label>Platforma</label><input id="adm_ratingBadgePlatform" placeholder="napr. Booking.com"></div>
+          <div class="field"><label>Rok</label><input id="adm_ratingBadgeYear" placeholder="napr. 2024"></div>
+        </div>
+        <button class="btn-primary" onclick="saveContent()">Uložiť obsah</button>
+        <div id="contentSaveMsg"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-cennik">
+        <p class="tab-intro">Verejný cenník zobrazený na stránke "Cenník". Každý riadok automaticky vytvorí aj skutočné cenové pravidlo a (ak vyplníte minimálny pobyt) pravidlo dĺžky pobytu pre daný termín — takže kalendár vždy zodpovedá tomu, čo je v cenníku.</p>
+        <div class="field-row">
+          <div class="field"><label>Názov sezóny</label><input id="adm_seasonName" placeholder="napr. Leto"></div>
+          <div class="field"><label>Zobrazovaný termín</label><input id="adm_seasonLabel" placeholder="napr. 1. 6. – 30. 9."></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Od</label><input id="adm_seasonStart" type="date"></div>
+          <div class="field"><label>Do</label><input id="adm_seasonEnd" type="date"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Minimálny pobyt (noci, nepovinné)</label><input id="adm_seasonMin" type="number" min="1"></div>
+          <div class="field"><label>Cena za noc (€)</label><input id="adm_seasonPrice" type="number" min="1"></div>
+        </div>
+        <div class="field toggle-field">
+          <label><input type="checkbox" id="adm_seasonTop"> Top sezóna (zvýrazniť)</label>
+        </div>
+        <button class="small-btn" onclick="addPricingSeason()">Pridať riadok cenníka</button>
+        <div id="cennikAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-faq">
+        <p class="tab-intro">Otázky a odpovede zobrazené na stránke "Otázky".</p>
+        <div class="field"><label>Otázka</label><input id="adm_faqQuestion" placeholder="napr. Môžeme prísť so psom?"></div>
+        <div class="field"><label>Odpoveď</label><textarea id="adm_faqAnswer"></textarea></div>
+        <button class="small-btn" onclick="addFaq()">Pridať otázku</button>
+        <div id="faqAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-pages">
+        <p class="tab-intro">Vlastné stránky odkazované v päte webu — pridajte ich koľko chcete (napr. právne informácie, domáci poriadok, čokoľvek iné), alebo ich odstráňte, keď ich nepotrebujete. Adresa stránky (URL) sa vytvorí automaticky z názvu.</p>
+        <div class="field"><label>Názov v päte webu</label><input id="adm_pageNavLabel" placeholder="napr. Ochrana osobných údajov"></div>
+        <div class="field"><label>Nadpis na stránke (nepovinné, inak sa použije názov)</label><input id="adm_pageTitle" placeholder="napr. Ochrana osobných údajov"></div>
+        <div class="field"><label>Obsah</label><textarea id="adm_pageContent" style="min-height:110px;"></textarea></div>
+        <button class="small-btn" onclick="addCustomPage()">Pridať stránku</button>
+        <div id="pagesAdminList" style="margin-top:20px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-facts">
+        <p class="tab-intro">Fakty zobrazené v páse pod hero sekciou — napíšte si vlastnú hodnotu aj popis k nej, v ľubovoľnom počte.</p>
+        <div class="field-row">
+          <div class="field"><label>Hodnota</label><input id="adm_factValue" placeholder="napr. 4"></div>
+          <div class="field"><label>Popis</label><input id="adm_factLabel" placeholder="napr. hostia, kapacita chaty"></div>
+        </div>
+        <button class="small-btn" onclick="addFact()">Pridať fakt</button>
+        <div id="factsAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-highlights">
+        <p class="tab-intro">Karty v sekcii "Prečo práve táto chata". Ikonu môžete nahrať k existujúcej karte nižšie — kým nenahráte vlastnú, zobrazí sa neutrálna zástupná ikona.</p>
+        <div class="field"><label>Nadpis</label><input id="adm_hlTitle" placeholder="napr. Krb a útulnosť"></div>
+        <div class="field"><label>Text</label><textarea id="adm_hlText"></textarea></div>
+        <button class="small-btn" onclick="addHighlight()">Pridať kartu</button>
+        <div id="highlightsAdminList" style="margin-top:20px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-amenities">
+        <p class="tab-intro">Zoznam vybavenia zobrazený v sekcii "O chate" na hlavnej stránke.</p>
+        <div class="field"><label>Nová položka</label><input id="adm_amenityText" placeholder="napr. Vírivka na terase"></div>
+        <button class="small-btn" onclick="addAmenity()">Pridať</button>
+        <div id="amenitiesAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-gallery">
+        <p class="tab-intro">Kategórie na filtrovanie galérie (napr. Exteriér, Interiér, Okolie):</p>
+        <div class="field-row">
+          <div class="field"><label>Nová kategória</label><input id="adm_catName" placeholder="napr. Terasa"></div>
+          <div class="field" style="display:flex; align-items:flex-end;"><button class="small-btn" onclick="addGalleryCategory()">Pridať kategóriu</button></div>
+        </div>
+        <div id="galleryCategoriesAdminList" style="margin-bottom:20px;"></div>
+
+        <div class="upload-box" id="uploadDropzone">
+          <input id="adm_imgFile" type="file" accept="image/*" multiple style="display:none;" onchange="handleFileUpload(this.files)">
+          <div class="upload-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4M12 4l-4 4M12 4l4 4"/><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+          </div>
+          <p><b>Nahrať fotky zo zariadenia</b><br>Presuňte sem súbory, alebo <button type="button" class="link-btn" onclick="document.getElementById('adm_imgFile').click()">vyberte súbory</button>.</p>
+          <div id="uploadProgress" class="upload-progress"></div>
+        </div>
+        <div class="or-divider"><span>alebo</span></div>
+        <div class="field-row">
+          <div class="field"><label>Vložiť URL obrázka</label><input id="adm_imgUrl" placeholder="https://..."></div>
+          <div class="field"><label>Popis</label><input id="adm_imgCap" placeholder="Terasa v zime"></div>
+        </div>
+        <div class="field"><label>Kategória (nepovinné)</label><select id="adm_imgCategory"><option value="">Bez kategórie</option></select></div>
+        <button class="small-btn" onclick="addGalleryImage()">Pridať podľa URL</button>
+        <div id="galleryStorageNote" class="storage-note"></div>
+        <div id="galleryAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-nearby">
+        <div class="field"><label>Názov miesta</label><input id="adm_nearbyTitle"></div>
+        <div class="field"><label>Vzdialenosť</label><input id="adm_nearbyDist" placeholder="napr. 10 min autom"></div>
+        <div class="field"><label>Popis</label><textarea id="adm_nearbyDesc"></textarea></div>
+        <button class="small-btn" onclick="addNearby()">Pridať miesto</button>
+        <div id="nearbyAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-deals">
+        <p class="tab-intro">Pridanie ponuky zároveň nastaví zodpovedajúcu cenu za noc pre tento termín a <b>zruší minimálny počet nocí</b> len pre tento termín — takže sa dá napríklad ponúknuť aj krátka medzera medzi rezerváciami, ktorá by inak nespĺňala vašu bežnú minimálnu dĺžku pobytu.</p>
+        <div class="field"><label>Názov ponuky</label><input id="adm_dealTitle" placeholder="Posledný septembrový víkend"></div>
+        <div class="field-row">
+          <div class="field"><label>Od</label><input id="adm_dealStart" type="date"></div>
+          <div class="field"><label>Do</label><input id="adm_dealEnd" type="date"></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Zľava (%)</label><input id="adm_dealDiscount" type="number" placeholder="20"></div>
+          <div class="field"><label>Poznámka</label><input id="adm_dealNote" placeholder="Posledné 2 noci"></div>
+        </div>
+        <button class="small-btn" onclick="addDeal()">Pridať ponuku</button>
+        <div id="dealsAdminList" style="margin-top:16px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-special">
+        <p class="tab-intro">Voľná propagačná ponuka — nemusí byť viazaná na konkrétne dátumy ani zľavu percentom. Môžete mať viac ponúk naraz, každú s inou farbou; tlačidlo môžete aj úplne vypnúť.</p>
+        <div class="field"><label>Nadpis</label><input id="adm_specialTitle" placeholder="napr. Najlepšia cena sezóny"></div>
+        <div class="field"><label>Text</label><textarea id="adm_specialText" placeholder="napr. Rezervujte do konca mesiaca a získajte fľašu vína na uvítanie."></textarea></div>
+        <div class="field toggle-field">
+          <label><input type="checkbox" id="adm_specialCtaEnabled" checked> Zobraziť tlačidlo</label>
+        </div>
+        <div class="field-row">
+          <div class="field"><label>Text tlačidla</label><input id="adm_specialCta" placeholder="Rezervovať"></div>
+          <div class="field"><label>Farba</label>
+            <select id="adm_specialColor">
+              <option value="amber">Jantárová</option>
+              <option value="spruce">Smrekovo zelená</option>
+              <option value="sage">Šalviová</option>
+              <option value="terracotta">Terakotová</option>
+              <option value="charcoal">Antracitová</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="addSpecialOffer()">Pridať ponuku</button>
+        <div id="specialSaveMsg"></div>
+        <div id="specialOffersAdminList" style="margin-top:20px;"></div>
+      </div>
+
+      <div class="admin-panel-view" id="tab-visibility">
+        <p class="tab-intro">Skryte akúkoľvek sekciu domovskej stránky alebo celú stránku bez toho, aby ste stratili jej obsah — po opätovnom zapnutí sa všetko objaví presne tak, ako ste to nechali.</p>
+        <p class="tab-intro" style="font-weight:700; color:var(--spruce); margin-top:18px;">Sekcie na hlavnej stránke</p>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_quickCheck"> Rýchle overenie dostupnosti (pod hero sekciou)</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_highlights"> "Prečo práve táto chata" (karty s dôvodmi)</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_about"> "O chate a Ždiari"</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_lastMinute"> Last minute pobyty</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_specialOffers"> Špeciálne ponuky</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_reviewsTeaser"> Ukážka recenzií</label></div>
+        <p class="tab-intro" style="font-weight:700; color:var(--spruce); margin-top:22px;">Celé stránky (skryté aj z navigácie a päty)</p>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_pageGallery"> Galéria</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_pageNearby"> Okolie</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_pageFaq"> Otázky</label></div>
+        <div class="field toggle-field"><label><input type="checkbox" id="vis_pageReviews"> Recenzie</label></div>
+        <button class="btn-primary" onclick="saveSectionVisibility()">Uložiť zobrazenie</button>
+        <div id="visibilitySaveMsg"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
